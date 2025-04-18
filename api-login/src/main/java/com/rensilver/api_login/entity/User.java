@@ -1,5 +1,6 @@
 package com.rensilver.api_login.entity;
 
+import com.rensilver.api_login.enums.UserTypeEnum;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,6 +16,7 @@ public class User {
     private String lastName;
     private String email;
     private String password;
+    private UserTypeEnum userType;
     private List<Role> roles;
 
     public User() {
@@ -25,12 +27,14 @@ public class User {
                 String lastName,
                 String email,
                 String password,
+                UserTypeEnum userType,
                 List<Role> roles) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.userType = userType;
         this.roles = roles;
     }
 
@@ -72,6 +76,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public UserTypeEnum getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserTypeEnum userType) {
+        this.userType = userType;
     }
 
     public List<Role> getRoles() {

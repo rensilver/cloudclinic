@@ -2,8 +2,8 @@ package com.rensilver.api_login.enums;
 
 public enum RoleEnum {
 
-    PATIENT("Patient"),
-    DOCTOR("Doctor"),
+    BASIC("Basic"),
+    ADVANCED("Advanced"),
     ADMIN("Administration");
 
     private String roleName;
